@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redirect all requests to index.php except existing files/directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Basic security
+<FilesMatch "\.(env|sql|ini|log)$">
+  Require all denied
+</FilesMatch>
+
