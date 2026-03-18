@@ -52,7 +52,7 @@ Brug PHP's indbyggede webserver sammen med router-scriptet:
 1. Åbn en terminal i projektets rodmappe.
 2. Kør følgende kommando:
    ```bash
-   php -S localhost:8000 public/router.php
+   php -S localhost:8000 -t public public/router.php
    ```
 3. Besøg `http://localhost:8000` i din browser.
 
