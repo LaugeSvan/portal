@@ -4,7 +4,7 @@ declare(strict_types=1);
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'bogoe_portalen');
 define('DB_USER', 'bogoe');
-define('DB_PASS', 'strongpassword');
+define('DB_PASS', 'portalen'); // Ændr dette til en sikker kode, som kun du kender.
 define('DB_CHARSET', 'utf8mb4');
 
 function getDB(): PDO {
