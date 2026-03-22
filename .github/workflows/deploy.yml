@@ -1,0 +1,21 @@
+name: Deploy to Simply.com
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+      - name: FTP Deploy
+        run: |
+          lftp -e "
+            set ssl:verify-certificate false;
+            set ftp:passive-mode true;
+            open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }};
+            mirror -R --delete --verbose --exclude .git/ --exclude .github/ --exclude src/config/database.php ./ /public_html/;
+            quit
+          "
