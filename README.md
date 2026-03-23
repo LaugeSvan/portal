@@ -82,4 +82,8 @@ Sørg for at webserveren (f.eks. `www-data`) har skriverettigheder til eventuell
 
 ## Administration
 - Gå til `/admin` for at logge ind.
-- For at oprette den første administrator-bruger, kan du besøge `/admin/setup.php` (husk at slette eller sikre denne fil efter brug).
+- For at oprette den første administrator-bruger, kan du besøge `/admin/setup.php`.
+
+> [!CAUTION]
+> **VIGTIGT: Fjern `public/admin` mappen efter brug!**
+> Når du har oprettet din første administrator via `setup.php`, skal du **SLETTE** mappen `public/admin/` fuldstændigt. Hvis mappen ikke fjernes, vil login-systemet og andre admin-funktioner **IKKE VIRKE KORREKT**, da serveren vil forsøge at tilgå mappen i stedet for at sende forespørgslen gennem routeren.
