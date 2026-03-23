@@ -13,7 +13,7 @@ $pageTitle = 'Om Bogø · Bogø Portalen';
     <?php
     $content = getPageContent('om-bogoe', 'main');
     if ($content): ?>
-        <div class="prose"><?= $content ?></div>
+        <div class="prose"><?= strip_tags($content, '<h2><h3><h4><p><br><strong><em><ul><ol><li><a><hr>') ?></div>
     <?php else: ?>
         <div class="empty-card">
             <p>Indhold til denne side er endnu ikke tilføjet.</p>
