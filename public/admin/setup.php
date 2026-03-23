@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Setup · Bogø Portalen</title>
-    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
     <style>
         .setup-container { max-width: 400px; margin: 100px auto; padding: 20px; background: #1e293b; color: white; border-radius: 8px; }
         .setup-container input { width: 100%; margin: 10px 0; padding: 8px; border-radius: 4px; border: 1px solid #334155; background: #0f172a; color: white; }

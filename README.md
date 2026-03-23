@@ -86,4 +86,8 @@ Sørg for at webserveren (f.eks. `www-data`) har skriverettigheder til eventuell
 
 > [!CAUTION]
 > **VIGTIGT: Fjern `public/admin` mappen efter brug!**
-> Når du har oprettet din første administrator via `setup.php`, skal du **SLETTE** mappen `public/admin/` fuldstændigt. Hvis mappen ikke fjernes, vil login-systemet og andre admin-funktioner **IKKE VIRKE KORREKT**, da serveren vil forsøge at tilgå mappen i stedet for at sende forespørgslen gennem routeren.
+> Når du har oprettet din første administrator via `setup.php`, skal du **SLETTE** mappen `public/admin/` fuldstændigt.
+>
+> Hvis mappen ikke fjernes, vil serveren (især Apache og PHP's indbyggede server) tro, at `/admin/dashboard` er en fysisk mappe under `public/admin/`. Dette medfører:
+> 1. At login og admin-sider **IKKE VIRKER**.
+> 2. At CSS og andre filer **IKKE KAN FINDES**, da stierne bliver forkerte.

@@ -13,7 +13,7 @@ $currentPath = $currentPath ?? ($_SERVER['REQUEST_URI'] ?? '/admin');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css?v=<?= time() ?>">
 </head>
 <body>
 <div class="admin-shell">
