@@ -16,6 +16,6 @@ jobs:
             set ssl:verify-certificate false;
             set ftp:passive-mode true;
             open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_SERVER }};
-            mirror -R --delete --verbose --exclude .git/ --exclude .github/ --exclude src/config/database.php ./ /public_html/;
+            mirror -R --delete --verbose --exclude .git/ --exclude .github/ --exclude public/admin/setup.php --exclude src/config/database.php ./ /public_html/;
             quit
           "
