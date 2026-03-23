@@ -1,10 +1,14 @@
 RewriteEngine On
 
-# 1. If the requested file exists in the public folder, serve it from there
+# 1. Remove trailing slashes from URLs (unless it's a real directory)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# 2. If the requested file exists in the public folder, serve it from there
 RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
 RewriteRule ^(.*)$ public/$1 [L,QSA]
 
-# 2. Otherwise, if the requested file/directory does not exist in the root, forward to index.php
+# 3. Otherwise, if the requested file/directory does not exist in the root, forward to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
