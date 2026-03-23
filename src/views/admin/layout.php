@@ -19,12 +19,13 @@ $currentPath = $currentPath ?? ($_SERVER['REQUEST_URI'] ?? '/admin');
       tinymce.init({
         selector: 'textarea:not(.no-editor)',
         plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-        toolbar: 'undo redo | blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code | help',
+        block_formats: 'Afsnit=p; Overskrift 1=h1; Overskrift 2=h2; Overskrift 3=h3',
         content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; }',
-        menubar: false,
+        menubar: true,
         branding: false,
         promotion: false,
-        height: 400,
+        height: 500,
         language: 'da'
       });
     </script>
