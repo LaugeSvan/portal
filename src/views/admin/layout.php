@@ -23,6 +23,7 @@ $currentPath = $currentPath ?? ($_SERVER['REQUEST_URI'] ?? '/admin');
         block_formats: 'Afsnit=p; Overskrift 1=h1; Overskrift 2=h2; Overskrift 3=h3',
         content_style: 'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; }',
         entity_encoding: 'raw',
+        forced_root_block: false,
         menubar: true,
         branding: false,
         promotion: false,
