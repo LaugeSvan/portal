@@ -9,7 +9,7 @@ $pdo = getDB();
 $hasUsers = (bool)$pdo->query('SELECT EXISTS(SELECT 1 FROM users) AS exists_flag')->fetch()['exists_flag'];
 
 if ($hasUsers) {
-    exit('Opsætning er allerede gennemført. Slet venligst mappen public/admin/.');
+    exit('Opsætning er allerede gennemført. Slet venligst mappen public/setup/.');
 }
 
 $error = null;
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'password_hash' => password_hash($password, PASSWORD_DEFAULT),
             'role' => 'sudoadmin',
         ]);
-        $success = 'Første administrator oprettet! SLET NU mappen "public/admin/" for at systemet kan virke.';
+        $success = 'Første administrator oprettet! SLET NU mappen "public/setup/" for at systemet kan virke.';
     } else {
         $error = 'Alle felter skal udfyldes.';
     }

@@ -131,7 +131,7 @@ switch ($uri) {
                     $controller->deleteUser();
                     break;
                 case '/admin/setup.php':
-                    require __DIR__ . '/admin/setup.php';
+                    require __DIR__ . '/setup/setup.php';
                     break;
                 default:
                     http_response_code(404);
