@@ -44,7 +44,7 @@ function getPageContent(string $pageSlug, string $sectionKey): string {
         ':section' => $sectionKey,
     ]);
     $row = $stmt->fetch();
-    return $row['content'] ?? '';
+    return html_entity_decode($row['content'] ?? '');
 }
 
 function isSudoAdmin(): bool {
