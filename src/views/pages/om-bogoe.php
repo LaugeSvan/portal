@@ -5,7 +5,7 @@ $pageTitle = 'Om Bogø · Bogø Portalen';
 <section class="page-head">
     <h1>Om Bogø</h1>
     <p class="page-intro">
-        <?= sanitize(getPageContent('om-bogoe', 'intro') ?: 'Bogø er en lille ø i det sydlige Danmark, forbundet med Møn via en dæmning. Her bor et aktivt lokalsamfund med stærke fællesskaber og smuk natur.') ?>
+        <?= getPageContent('om-bogoe', 'intro') ?: 'Bogø er en lille ø i det sydlige Danmark, forbundet med Møn via en dæmning. Her bor et aktivt lokalsamfund med stærke fællesskaber og smuk natur.' ?>
     </p>
 </section>
 
