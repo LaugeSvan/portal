@@ -25,6 +25,10 @@ $pageTitle = 'Oversigt · Bogø Portalen admin';
                 <span class="stat-value"><?= (int)($stats['associations'] ?? 0) ?></span>
             </article>
             <article class="stat-card">
+                <span class="stat-label">Annoncer</span>
+                <span class="stat-value"><?= (int)($stats['ads'] ?? 0) ?></span>
+            </article>
+            <article class="stat-card">
                 <span class="stat-label">Admin-brugere</span>
                 <span class="stat-value"><?= (int)($stats['users'] ?? 0) ?></span>
             </article>

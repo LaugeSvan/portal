@@ -30,6 +30,7 @@ $currentPath = $currentPath ?? ($_SERVER['REQUEST_URI'] ?? '/admin');
                 <li><a href="/admin/events" class="<?= str_starts_with($currentPath, '/admin/events') ? 'is-active' : '' ?>">Begivenheder</a></li>
                 <li><a href="/admin/news" class="<?= str_starts_with($currentPath, '/admin/news') ? 'is-active' : '' ?>">Nyheder</a></li>
                 <li><a href="/admin/associations" class="<?= str_starts_with($currentPath, '/admin/associations') ? 'is-active' : '' ?>">Foreninger</a></li>
+                <li><a href="/admin/ads" class="<?= str_starts_with($currentPath, '/admin/ads') ? 'is-active' : '' ?>">Annoncer</a></li>
                 <li><a href="/admin/pages" class="<?= str_starts_with($currentPath, '/admin/pages') ? 'is-active' : '' ?>">Sider</a></li>
                 <?php if (isSudoAdmin()): ?>
                     <li><a href="/admin/users" class="<?= str_starts_with($currentPath, '/admin/users') ? 'is-active' : '' ?>">Brugere</a></li>

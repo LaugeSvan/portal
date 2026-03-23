@@ -104,6 +104,16 @@ switch ($uri) {
                 case '/admin/associations/delete':
                     $controller->deleteAssociation();
                     break;
+                case '/admin/ads':
+                    $controller->ads();
+                    break;
+                case '/admin/ads/create':
+                case '/admin/ads/edit':
+                    $controller->adForm();
+                    break;
+                case '/admin/ads/delete':
+                    $controller->deleteAd();
+                    break;
                 case '/admin/pages':
                     $controller->pages();
                     break;

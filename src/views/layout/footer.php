@@ -1,6 +1,26 @@
 <?php
 declare(strict_types=1);
 ?>
+            </div> <!-- /.main-content -->
+
+            <aside class="global-sidebar">
+                <?php if (!empty($ads)): ?>
+                    <div class="sidebar-ads">
+                        <?php foreach ($ads as $ad): ?>
+                            <div class="sidebar-ad-card">
+                                <?php if ($ad['link_url']): ?>
+                                    <a href="<?= sanitize($ad['link_url']) ?>" target="_blank" rel="noopener">
+                                        <img src="<?= sanitize($ad['image_path']) ?>" alt="<?= sanitize($ad['title']) ?>" class="ad-image">
+                                    </a>
+                                <?php else: ?>
+                                    <img src="<?= sanitize($ad['image_path']) ?>" alt="<?= sanitize($ad['title']) ?>" class="ad-image">
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </aside>
+        </div> <!-- /.global-layout -->
     </div> <!-- /.container -->
 </main>
 

@@ -10,7 +10,7 @@ $pageTitle = 'Det sker på Bogø';
     </p>
 </section>
 
-<section class="events-layout">
+<div class="events-container">
     <div class="events-main">
         <div class="section-heading">
             <h2>Kommende begivenheder</h2>
@@ -49,7 +49,7 @@ $pageTitle = 'Det sker på Bogø';
         <?php endif; ?>
     </div>
 
-    <aside class="events-sidebar">
+    <div class="events-sidebar-extra">
         <div class="sidebar-card">
             <h2>Det kommer (snart)</h2>
             <p>Vi arbejder på at samle faste formater for:</p>
@@ -70,7 +70,7 @@ $pageTitle = 'Det sker på Bogø';
             <h3>Find mere på nettet</h3>
             <p>Indtil det hele bor her, finder du også aktiviteter via Møns fælles sider og lokale Facebook-grupper.</p>
         </div>
-    </aside>
-</section>
+    </div>
+</div>
 
  

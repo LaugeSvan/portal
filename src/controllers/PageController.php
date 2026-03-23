@@ -5,11 +5,13 @@ require_once __DIR__ . '/../helpers.php';
 require_once __DIR__ . '/../models/Event.php';
 require_once __DIR__ . '/../models/News.php';
 require_once __DIR__ . '/../models/Association.php';
+require_once __DIR__ . '/../models/Ad.php';
 
 class PageController
 {
     private function render(string $view, array $data = []): void
     {
+        $ads = Ad::published();
         extract($data, EXTR_SKIP);
         $currentPath = $_SERVER['REQUEST_URI'] ?? '/';
         $viewFile = __DIR__ . '/../views/pages/' . $view . '.php';

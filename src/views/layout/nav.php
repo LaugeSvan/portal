@@ -33,3 +33,5 @@ function isActive(string $path, string $currentPath): string {
 
 <main class="site-main">
     <div class="container">
+        <div class="global-layout">
+            <div class="main-content">

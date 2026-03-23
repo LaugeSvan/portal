@@ -6,6 +6,7 @@ require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../models/Event.php';
 require_once __DIR__ . '/../models/News.php';
 require_once __DIR__ . '/../models/Association.php';
+require_once __DIR__ . '/../models/Ad.php';
 require_once __DIR__ . '/../models/Page.php';
 require_once __DIR__ . '/../models/ActivityLog.php';
 
@@ -96,12 +97,75 @@ class AdminController
             'events' => count(Event::all()),
             'news' => count(News::all()),
             'associations' => count(Association::all()),
+            'ads' => count(Ad::all()),
             'users' => count(User::all()),
         ];
         $this->render('dashboard', [
             'stats' => $stats,
             'activity' => ActivityLog::recent(10),
         ]);
+    }
+
+    public function ads(): void
+    {
+        $ads = Ad::all();
+        $this->render('ads', ['ads' => $ads]);
+    }
+
+    public function adForm(): void
+    {
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
+        $ad = $id ? Ad::find($id) : null;
+        $error = null;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['csrf_token']) || !verifyCsrfToken((string)$_POST['csrf_token'])) {
+                $error = 'Ugyldig sikkerhedstoken.';
+            } else {
+                $data = $_POST;
+                $data['is_published'] = isset($_POST['is_published']) ? 1 : 0;
+                $data['sort_order'] = (int)($_POST['sort_order'] ?? 0);
+
+                if (!empty($_FILES['image']['name'] ?? '')) {
+                    $upload = $this->handleUpload('image');
+                    if ($upload['ok']) {
+                        $data['image_path'] = $upload['path'];
+                    } else {
+                        $error = $upload['error'];
+                    }
+                } elseif (!$ad) {
+                    $error = 'Billede er påkrævet for nye annoncer.';
+                } else {
+                    $data['image_path'] = $ad['image_path'];
+                }
+
+                if (!$error) {
+                    if ($ad) {
+                        Ad::update($ad['id'], $data);
+                        $this->log('update', 'ad', (int)$ad['id'], 'Opdaterede annonce');
+                    } else {
+                        $idNew = Ad::create($data);
+                        $this->log('create', 'ad', $idNew, 'Oprettede annonce');
+                    }
+                    redirect('/admin/ads');
+                }
+            }
+        }
+
+        $this->render('ads_form', [
+            'ad' => $ad,
+            'error' => $error,
+        ]);
+    }
+
+    public function deleteAd(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && verifyCsrfToken((string)($_POST['csrf_token'] ?? ''))) {
+            $id = (int)$_POST['id'];
+            Ad::delete($id);
+            $this->log('delete', 'ad', $id, 'Slettede annonce');
+        }
+        redirect('/admin/ads');
     }
 
     public function events(): void

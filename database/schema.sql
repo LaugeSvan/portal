@@ -75,3 +75,15 @@ CREATE TABLE IF NOT EXISTS admin_activity_log (
   KEY idx_user_created (user_id, created_at),
   CONSTRAINT fk_admin_activity_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 );
+
+-- Ads
+CREATE TABLE IF NOT EXISTS ads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  image_path VARCHAR(500) NOT NULL,
+  link_url VARCHAR(500),
+  is_published BOOLEAN DEFAULT TRUE,
+  sort_order INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
