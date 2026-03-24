@@ -156,10 +156,12 @@ body {
 }
 
 .page-intro {
-  max-width: 40rem;
-  color: var(--color-text-muted);
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--color-sea);
+  margin: 0 0 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(26,58,74,0.1);
 }
 
 .global-layout {

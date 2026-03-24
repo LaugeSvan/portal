@@ -4,9 +4,11 @@ $pageTitle = 'Om Bogø Portalen · Bogø Portalen';
 ?>
 <section class="page-head">
     <h1>Om Bogø Portalen</h1>
-    <p class="page-intro">
-        <?= getPageContent('om-bogoe-portalen', 'intro') ?: 'Bogø Portalen er en digital samlingsplads for øens fællesskab – her samles nyheder, begivenheder og foreninger på ét sted.' ?>
-    </p>
+    <div class="prose">
+        <p class="page-intro">
+            <?= getPageContent('om-bogoe-portalen', 'intro') ?: 'Bogø Portalen er en digital samlingsplads for øens fællesskab – her samles nyheder, begivenheder og foreninger på ét sted.' ?>
+        </p>
+    </div>
 </section>
 
 <section class="page-body">

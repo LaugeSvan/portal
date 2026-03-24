@@ -4,9 +4,11 @@ $pageTitle = 'Bogøs foreninger · Bogø Portalen';
 ?>
 <section class="page-head">
     <h1>Bogøs foreninger</h1>
-    <p class="page-intro">
-        <?= sanitize(getPageContent('foreninger', 'intro') ?: 'Bogø har et rigt foreningsliv. Her finder du en oversigt over øens aktive foreninger og frivillige fællesskaber.') ?>
-    </p>
+    <div class="prose">
+        <p class="page-intro">
+            <?= sanitize(getPageContent('foreninger', 'intro') ?: 'Bogø har et rigt foreningsliv. Her finder du en oversigt over øens aktive foreninger og frivillige fællesskaber.') ?>
+        </p>
+    </div>
 </section>
 
 <?php if (empty($associations)): ?>

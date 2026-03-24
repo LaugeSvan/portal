@@ -5,9 +5,11 @@ $pageTitle = 'Det sker på Bogø';
 ?>
 <section class="page-head">
     <h1>Det sker på Bogø</h1>
-    <p class="page-intro">
-        <?= sanitize(getPageContent('det-sker', 'intro') ?: 'Her samler vi store og små begivenheder på Bogø – fra loppemarkeder og naturformidling til festivaler og fællesspisninger.') ?>
-    </p>
+    <div class="prose">
+        <p class="page-intro">
+            <?= sanitize(getPageContent('det-sker', 'intro') ?: 'Her samler vi store og små begivenheder på Bogø – fra loppemarkeder og naturformidling til festivaler og fællesspisninger.') ?>
+        </p>
+    </div>
 </section>
 
 <div class="events-container">

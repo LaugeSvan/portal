@@ -4,9 +4,11 @@ $pageTitle = 'Nyheder · Bogø Portalen';
 ?>
 <section class="page-head">
     <h1>Nyheder</h1>
-    <p class="page-intro">
-        <?= sanitize(getPageContent('nyheder', 'intro') ?: 'Seneste nyt fra Bogø og lokalsamfundet.') ?>
-    </p>
+    <div class="prose">
+        <p class="page-intro">
+            <?= sanitize(getPageContent('nyheder', 'intro') ?: 'Seneste nyt fra Bogø og lokalsamfundet.') ?>
+        </p>
+    </div>
 </section>
 
 <?php if (empty($news)): ?>
