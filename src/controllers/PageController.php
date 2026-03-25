@@ -11,7 +11,7 @@ class PageController
 {
     private function render(string $view, array $data = []): void
     {
-        $ads = Ad::published();
+        $sponsors = Ad::published();
         extract($data, EXTR_SKIP);
         $currentPath = $_SERVER['REQUEST_URI'] ?? '/';
         $viewFile = __DIR__ . '/../views/pages/' . $view . '.php';

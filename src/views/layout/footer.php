@@ -4,16 +4,16 @@ declare(strict_types=1);
             </div> <!-- /.main-content -->
 
             <aside class="global-sidebar">
-                <?php if (!empty($ads)): ?>
-                    <div class="sidebar-ads">
-                        <?php foreach ($ads as $ad): ?>
-                            <div class="sidebar-ad-card">
-                                <?php if ($ad['link_url']): ?>
-                                    <a href="<?= sanitize($ad['link_url']) ?>" target="_blank" rel="noopener">
-                                        <img src="<?= sanitize($ad['image_path']) ?>" alt="<?= sanitize($ad['title']) ?>" class="ad-image">
+                <?php if (!empty($sponsors)): ?>
+                    <div class="sidebar-sponsors">
+                        <?php foreach ($sponsors as $sponsor): ?>
+                            <div class="sidebar-sponsor-card">
+                                <?php if ($sponsor['link_url']): ?>
+                                    <a href="<?= sanitize($sponsor['link_url']) ?>" target="_blank" rel="noopener">
+                                        <img src="<?= sanitize($sponsor['image_path']) ?>" alt="<?= sanitize($sponsor['title']) ?>" class="sponsor-image">
                                     </a>
                                 <?php else: ?>
-                                    <img src="<?= sanitize($ad['image_path']) ?>" alt="<?= sanitize($ad['title']) ?>" class="ad-image">
+                                    <img src="<?= sanitize($sponsor['image_path']) ?>" alt="<?= sanitize($sponsor['title']) ?>" class="sponsor-image">
                                 <?php endif; ?>
                             </div>
                         <?php endforeach; ?>

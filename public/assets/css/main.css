@@ -260,13 +260,13 @@ body {
   gap: 1rem;
 }
 
-.sidebar-ads {
+.sidebar-sponsors {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.sidebar-ad-card {
+.sidebar-sponsor-card {
   background: rgba(255,255,255,0.85);
   border-radius: 16px;
   border: 1px solid rgba(26,58,74,0.06);
@@ -275,7 +275,7 @@ body {
   line-height: 0;
 }
 
-.ad-image {
+.sponsor-image {
   width: 100%;
   height: auto;
   display: block;
