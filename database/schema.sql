@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS events (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   event_date DATE,
-  recurring ENUM('none','daily','weekly','monthly','yearly') DEFAULT 'none',
   location VARCHAR(255),
   external_url VARCHAR(500),
   image_path VARCHAR(500),
